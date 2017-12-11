@@ -1,0 +1,38 @@
+body{
+	text-align: center;
+}
+.container{
+/*	height: 100px;
+	width: 200px;
+	border: 1px;*/
+}
+.map{
+	border:1px solid black;
+	height: 600px;
+	width: 800px;
+	background-image: url('../img/PhilsMapISCOOLAF.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 50% 50%;
+	display: inline-block;
+}
+#player1,
+#player2{
+	height: 30px;
+	width: 100px;
+	border:1px solid black;
+	display: inline-block;
+}
+.state{
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	display: inline-block;
+}
+#player1Question,
+#player2Question{
+	height: 50px;
+	width: 200px;
+	border:1px solid black;
+	display: inline-block;
+}
