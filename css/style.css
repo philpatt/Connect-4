@@ -1,12 +1,13 @@
-body{
+body {
 	text-align: center;
+	display: inline-block;
 }
-.container{
-/*	height: 100px;
-	width: 200px;
-	border: 1px;*/
+.score-board {
+	border: 1px solid black;
+	display: inline-block;
 }
-.map{
+	
+.map {
 	border:1px solid black;
 	height: 600px;
 	width: 800px;
@@ -15,24 +16,49 @@ body{
 	background-size: 100%;
 	background-position: 50% 50%;
 	display: inline-block;
+	/*margin-top: 100px;*/
+	vertical-align:top;
+
+}
+.p1,
+.p2 {
+	height:600px; 
+	width:300px;
+	display: inline-block; 
+	border: 1px solid black;
+	margin-bottom: 40px;
 }
 #player1,
-#player2{
+#player2 {
 	height: 30px;
 	width: 100px;
 	border:1px solid black;
-	display: inline-block;
+	display: block;
+	margin: 40px;
 }
-.state{
+#player1-question,
+#player2-question {
+	height: 50px;
+	width: 200px;
+	border:1px solid black;
+	display: inline-block;
+	margin: 40px;
+}
+#player1-score,
+#player2-score {
+	display: inline-block;
+	height: 50px;
+	width: 200px ;
+	border: 1px solid black;
+	margin: 40px;
+}
+.state {
 	height: 100px;
 	width: 100px;
 	border: 1px solid black;
 	display: inline-block;
 }
-#player1Question,
-#player2Question{
-	height: 50px;
-	width: 200px;
-	border:1px solid black;
-	display: inline-block;
-}
+
+
+
+
