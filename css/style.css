@@ -7,7 +7,7 @@ body {
 	display: inline-block;
 }
 	
-.map {
+/*.map {
 	border:1px solid black;
 	height: 600px;
 	width: 800px;
@@ -18,7 +18,7 @@ body {
 	display: inline-block;
 	/*margin-top: 100px;*/
 	vertical-align:top;
-
+*/
 }
 .p1,
 .p2 {
