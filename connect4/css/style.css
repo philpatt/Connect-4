@@ -1,0 +1,17 @@
+body{
+	text-align: center;
+}
+.board{
+	/*height: 150px*/
+	background-color: yellow;
+	display: inline-block;
+}
+
+.col{
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	background-color: white;
+	border-radius: 70%;
+	margin: 3px;
+}
