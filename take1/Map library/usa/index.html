@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
   <meta charset="utf-8">
-  <title>JSMaps - Responsive Javascript Maps</title>
+  <title>USA TRIVIA</title>
   <meta name="description" content="JSMaps - Responsive Javascript Maps - http://jsmaps.io">
   <meta name="author" content="LGLab">
+  
 
   <!-- Demo scripts -->
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
@@ -18,7 +20,6 @@
     *, *:before, *:after {
       box-sizing: inherit;
     }
-
     body {
       font-family: 'Droid Sans', sans-serif;
       background:#f2f2f2;
@@ -61,7 +62,6 @@
     p, ul{
       margin-bottom:10px;
     }
-
   </style>
   <!-- End Demo scripts -->
 
@@ -73,23 +73,45 @@
   <!-- jsmaps-panzoom.js is optional if you are using enablePanZoom -->
   <link href="jsmaps/jsmaps.css" rel="stylesheet" type="text/css" />
   <script src="jsmaps/jsmaps-libs.js" type="text/javascript"></script>
-  <script src="jsmaps/jsmaps-panzoom.js"></script>
+
   <script src="jsmaps/jsmaps.min.js" type="text/javascript"></script>
   <script src="maps/usa.js" type="text/javascript"></script>
   <!-- End Map scripts -->
-
 </head>
-
 <body>
-
-  <div class="container">
-
+   <div class="container">
+  <div class="score-board">
+      <header>USA TRIVIA GAME!</header>
+    <div class= "p1">
+      <div id="player1">PLAYER 1</div>
+      <div id="player1-question">Question A</div>
+      <form action="">
+         <input type="radio" value="Answer1P1"> Answer1<br>
+         <input type="radio" value="Answer2P1"> Answer2<br>
+         <input type="radio" value="Answer3P1"> Answer3<br>
+         <input type="radio" value="Answer4P1"> Answer4<br>
+         <input type="submit">
+      </form>
+      <div id="player1-score">score</div>
+    </div>
     <!-- Map html - add the below to your page -->
     <div class="jsmaps-wrapper" id="usa-map"></div>
     <!-- End Map html -->
+    <div class="p2">
+      <div id="player2">PLAYER 2</div>
+      <div id="player2-question">Question B</div>
+      <form action="">
+        <input type="radio" value="nswer1P2"> Answer1<br>
+        <input type="radio" value="Answer2P2"> Answer2<br>
+        <input type="radio" value="Answer3P2"> Answer3<br>
+        <input type="radio" value="Answer4P2"> Answer4<br>
+        <input type="submit">
+      </form>
+      <div id="player2-score">score</div>
+    </div>  
   </div>
-
-  <script type="text/javascript">
+</div>
+<script type="text/javascript">
 
     $(function() {
       
