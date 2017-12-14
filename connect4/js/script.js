@@ -19,17 +19,17 @@ var colClicked = function(){
 		if(checkDiagWinner(coords[0], coords[1], 'blackClicked')){
 			console.log('Black WINS');
 		}
-		// else if(checkDiagWinner2(coords[0], coords[1], 'blackClicked')){
-		// 	console.log('Black WINS');
-		// }
-		// else if(checkHorzWinner(coords[0], coords[1], 'blackClicked')){
-		// //black won, update DOM appropriately, remove event listeners, etc
-		// 	console.log('Black WINS');
-		// }
-		// else if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
-		// 	//black won, update DOM appropriately, remove event listeners, etc
-		// 	console.log('Black WINS');
-		// }
+		else if(checkDiagWinner2(coords[0], coords[1], 'blackClicked')){
+			console.log('Black WINS');
+		}
+		else if(checkHorzWinner(coords[0], coords[1], 'blackClicked')){
+		//black won, update DOM appropriately, remove event listeners, etc
+			console.log('Black WINS');
+		}
+		else if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
+			//black won, update DOM appropriately, remove event listeners, etc
+			console.log('Black WINS');
+		}
 
 	} else{
 		this.style.backgroundColor = "red";
@@ -40,16 +40,16 @@ var colClicked = function(){
 			//red won, update DOM appropriately, remove event listeners, etc
 			console.log('RED WINS');
 		}
-		// else if (checkDiagWinner2(coords[0], coords[1], 'redClicked')){
-		// 	//red won, update DOM appropriately, remove event listeners, etc
-		// 	console.log('RED WINS');
-		// }
-		// else if (checkHorzWinner(coords[0], coords[1], 'redClicked')){
-		// 	console.log('red wins');
-		// }
-		// else if (checkVertWinner(coords[0], coords[1], 'redClicked')){
-		// 	console.log('red wins')
-		// }
+		else if (checkDiagWinner2(coords[0], coords[1], 'redClicked')){
+			//red won, update DOM appropriately, remove event listeners, etc
+			console.log('RED WINS');
+		}
+		else if (checkHorzWinner(coords[0], coords[1], 'redClicked')){
+			console.log('red wins');
+		}
+		else if (checkVertWinner(coords[0], coords[1], 'redClicked')){
+			console.log('red wins')
+		}
 	}
 }
 var checkVertWinner = function(rowNum, colNum, turnPlayer){
@@ -141,10 +141,9 @@ var checkDiagWinner = function(rowNum, colNum, turnPlayer){
 		}
 	}
 // reset row and column position
-
 	i = Number(rowNum) - 1;
 	j = Number(colNum) - 1;
-	console.log('entering negtaive check');
+	console.log('entering negtaive check', i, j);
 
 // diagonal check up to the left
 
@@ -152,7 +151,7 @@ var checkDiagWinner = function(rowNum, colNum, turnPlayer){
 		console.log('diagcheck (-)loop rowNumi, colNumj ==', i, j);
 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
 			count++;
-			i++;
+			i--;
 			j--;
 		}
 		else {
