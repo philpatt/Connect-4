@@ -1,17 +1,16 @@
 body{
 	text-align: center;
 	font-family: 'Bungee', cursive;
+	/*display: inline-block;*/
 }
-header{
-	width: 450px;
-	/*height: 20px;*/
-	display: inline-block;
-	/*margin: 100px;*/
-	font-size: 36px;
-	/*margin-bottom: 75px;*/
-	background-color: white;
-	border: 1px solid black;
-
+#winner{
+	display: none;
+	width: 200px;
+	position: fixed;
+	text-align: center;
+	font-size: 200px;
+	left: 80px;
+	opacity: 0.5;
 }
 .board{
 	/*height: 150px*/
@@ -22,7 +21,17 @@ header{
 	display: inline-block;
 	border: 5px solid white;
 }
-
+header{
+	width: 450px;
+	/*height: 20px;*/
+	display: inline-block;
+	/*margin: 100px;*/
+	font-size: 36px;
+	/*margin-bottom: 75px;*/
+	background-color: white;
+	border: 1px solid black;
+	color: teal;
+}
 .col{
 	height: 50px;
 	width: 50px;

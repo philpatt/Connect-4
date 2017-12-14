@@ -1,15 +1,32 @@
-var col = document.getElementsByClassName('col');
-turn = 0;
+// CONNECT 4 !
+document.addEventListener("DOMContentLoaded", function(){
 
+	addColEventListener();
+	var winner = document.getElementById('winner');
+
+})
+
+
+var col = document.getElementsByClassName('col');
+
+turn = 0;
+// winner
 var addColEventListener = function(){
 	console.log('game start');
 	for(var i = 0; i < col.length; i++){
 		col[i].addEventListener('click', colClicked);
 	}
 }
+var removeColEventListener = function(){
+	console.log('game end');
+	for(var i = 0; i < col.length; i++){
+		col[i].removeEventListener('click', colClicked);
+	}
+}
 
 var colClicked = function(){
 	turn++;
+	
 	var coords = this.id.replace('row', '').replace('col', '');
 	if(turn%2 === 0){
 		this.style.backgroundColor = "black";
@@ -17,18 +34,24 @@ var colClicked = function(){
 		this.removeEventListener('click', colClicked);
 		console.log('black clicked');
 		if(checkDiagWinner(coords[0], coords[1], 'blackClicked')){
-			console.log('Black WINS');
+			winner.style.display = 'inline-block';
+			removeColEventListener();
+			console.log('Black WINS DIAG');
 		}
 		else if(checkDiagWinner2(coords[0], coords[1], 'blackClicked')){
-			console.log('Black WINS');
+			winner.style.display = 'inline-block';
+			removeColEventListener();
+			console.log('Black WINS DIAG2');
 		}
 		else if(checkHorzWinner(coords[0], coords[1], 'blackClicked')){
-		//black won, update DOM appropriately, remove event listeners, etc
-			console.log('Black WINS');
+			winner.style.display = 'inline-block';
+			removeColEventListener();
+			console.log('Black WINS HORZ');
 		}
 		else if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
-			//black won, update DOM appropriately, remove event listeners, etc
-			console.log('Black WINS');
+			winner.style.display = 'inline-block';
+			removeColEventListener();
+			console.log('Black WINS VERT');
 		}
 
 	} else{
@@ -37,17 +60,27 @@ var colClicked = function(){
 		this.removeEventListener('click', colClicked);
 		console.log('red clicked');
 		if (checkDiagWinner(coords[0], coords[1], 'redClicked')){
-			//red won, update DOM appropriately, remove event listeners, etc
+			winner.style.display = 'inline-block';
+			winner.style.color = 'red'; 
+			removeColEventListener();
 			console.log('RED WINS');
 		}
 		else if (checkDiagWinner2(coords[0], coords[1], 'redClicked')){
-			//red won, update DOM appropriately, remove event listeners, etc
+			winner.style.display = 'inline-block';
+			winner.style.color = 'red';
+			removeColEventListener();
 			console.log('RED WINS');
 		}
 		else if (checkHorzWinner(coords[0], coords[1], 'redClicked')){
+			winner.style.display = 'inline-block';
+			winner.style.color = 'red';
+			removeColEventListener();
 			console.log('red wins');
 		}
 		else if (checkVertWinner(coords[0], coords[1], 'redClicked')){
+			winner.style.display = 'inline-block';
+			winner.style.color = 'red';
+			removeColEventListener();
 			console.log('red wins')
 		}
 	}
@@ -88,7 +121,6 @@ var checkVertWinner = function(rowNum, colNum, turnPlayer){
 		return false;
 	}
 }
-
 var checkHorzWinner = function(rowNum, colNum, turnPlayer){
 	var count = 0;
 	var i = rowNum; 
@@ -208,10 +240,6 @@ var checkDiagWinner2 = function(rowNum, colNum, turnPlayer){
 		return false;
 	}
 }
-document.addEventListener("DOMContentLoaded", function(){
-
-	addColEventListener();
-})
 
 
 
