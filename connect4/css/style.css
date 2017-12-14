@@ -19,3 +19,24 @@ body{
 .col:hover {
 	background-color: rgba(255, 255, 255, 0.8);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*js 
+	var move = document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer);
+	var moveMinus1 = rowNum -= 1; 
+	var moveAdd1= rowNum += 1;
+	var moveMinus2= rowNum -= 2;
+	var moveAdd2= 
+
+
+	*/
