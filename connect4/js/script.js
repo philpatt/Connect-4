@@ -20,14 +20,14 @@ var colClicked = function(){
 		// if(checkDiagWinner(coords[0], coords[1], 'blackClicked')){
 		// 	console.log('Black WINS');
 		// }
-		// else if(checkHorzWinner(coords[0], coords[1], 'blackClicked')){
-		// //black won, update DOM appropriately, remove event listeners, etc
-		// 	console.log('Black WINS');
-		// }
-		if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
-			//black won, update DOM appropriately, remove event listeners, etc
+		if(checkHorzWinner(coords[0], coords[1], 'blackClicked')){
+		//black won, update DOM appropriately, remove event listeners, etc
 			console.log('Black WINS');
 		}
+		// if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
+		// 	//black won, update DOM appropriately, remove event listeners, etc
+		// 	console.log('Black WINS');
+		// }
 
 	} else{
 		this.style.backgroundColor = "red";
@@ -38,12 +38,12 @@ var colClicked = function(){
 		// 	//red won, update DOM appropriately, remove event listeners, etc
 		// 	console.log('RED WINS');
 		// }
-		// if (checkHorzWinner(coords[0], coords[1], 'redClicked')){
-		// 	console.log('red wins');
-		// }
-		if (checkVertWinner(coords[0], coords[1], 'redClicked')){
-			console.log('red wins')
+		if (checkHorzWinner(coords[0], coords[1], 'redClicked')){
+			console.log('red wins');
 		}
+		// if (checkVertWinner(coords[0], coords[1], 'redClicked')){
+		// 	console.log('red wins')
+		// }
 	}
 }
 var checkVertWinner = function(rowNum, colNum, turnPlayer){
@@ -74,8 +74,6 @@ var checkVertWinner = function(rowNum, colNum, turnPlayer){
 			break;
 		}
 	}
-
-
 	console.log('vertCount was', count);
 	if(count >= 4){
 		return true;
@@ -85,11 +83,11 @@ var checkVertWinner = function(rowNum, colNum, turnPlayer){
 	}
 }
 var checkHorzWinner = function(rowNum, colNum, turnPlayer){
-	var count = 1;
+	var count = 0;
 	var i = rowNum; 
 	var j = colNum;
 
-	while (j < 6 && count < 4){
+	while (j < 5 && count < 4){
 		console.log('vertcheck loop row, col == ', i, j);
 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
 			count++;
@@ -99,6 +97,26 @@ var checkHorzWinner = function(rowNum, colNum, turnPlayer){
 			break;
 		}
 	}
+
+	j = colNum - 1;
+
+	while (j >= 0 && count < 4){
+		console.log('vertcheck loop row, col == ', i, j);
+		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
+			count++;
+			j--;
+		}
+		else{
+			break;
+		}
+	}
+
+
+
+
+
+
+
 	console.log('horzCount was', count);
 	if(count >= 4){
 		return true;
