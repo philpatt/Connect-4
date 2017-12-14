@@ -15,17 +15,20 @@ var addColEventListener = function(){
 var colClicked = function(){
 	turn++;
 	var coords = this.id.replace('row', '').replace('col', '');
+
 	if(turn%2 === 0){
 		this.style.backgroundColor = "black";
 		this.classList.add("blackClicked");
 		this.removeEventListener('click', colClicked);
 		console.log('black clicked');
+		checkVertWinner(coords[0], coords[1], 'blackClicked');
+		// checkDiagWinner(coords[0], coords[1], 'blackClicked');
 
-		if(checkDiagWinner(coords[0], coords[1], 'blackClicked')){
+		if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
 			//black won, update DOM appropriately, remove event listeners, etc
 			console.log('Black WINS');
 		}
-		// else if(checkVertWinner(coords[0], coords[1], 'redClicked')){
+		// else if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
 		// 	console.log('Black WINS');
 		// }
 	} else{
@@ -33,15 +36,17 @@ var colClicked = function(){
 		this.classList.add("redClicked");
 		this.removeEventListener('click', colClicked);
 		console.log('red clicked');
-		checkDiagWinner(coords[0], coords[1], 'redClicked');
+		checkVertWinner(coords[0], coords[1], 'redClicked');
+		// checkDiagWinner(coords[0], coords[1], 'redClicked');
 
-		if(checkDiagWinner(coords[0], coords[1], 'redClicked')){
-			//red won, update DOM appropriately, remove event listeners, etc
-			console.log('RED WINS');
-		} 
-		// else if(checkDiagWinner(coords[0], coords[1], 'redClicked')){
+		// if (checkDiagWinner(coords[0], coords[1], 'redClicked')){
+		// 	//red won, update DOM appropriately, remove event listeners, etc
 		// 	console.log('RED WINS');
 		// }
+		if (checkVertWinner(coords[0], coords[1], 'redClicked')){
+			console.log('red wins')
+		}
+
 	}
 }
 
@@ -49,172 +54,70 @@ var checkVertWinner = function (rowNum, colNum, turnPlayer){
 	var vertCount = 0;
 	var i = rowNum; 
 	var j = colNum;
-	var move = document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer);
-	// var move0 = document.getElementById('row' + (i -= 1) + 'col' + j).classList.contains(turnPlayer);
-	// var move1 = document.getElementById('row' + (i += 1) + 'col' + j).classList.contains(turnPlayer);
-	// var move2 = document.getElementById('row' + (i += 2) + 'col' + j).classList.contains(turnPlayer);
-	// var move3 = document.getElementById('row' + (i += 3) + 'col' + j).classList.contains(turnPlayer);
 
-	if( i > 0 && move){
-		vertCount++;
-		console.log('vc + 1')
-	}
-	else if( i > 0 && document.getElementById('row' + (i += 1) + 'col' + j).classList.contains(turnPlayer)){
-		vertCount++;
-		console.log('vc + 1')
-	}
-	else if(i > 0 && document.getElementById('row' + (i += 2) + 'col' + j).classList.contains(turnPlayer)){
-		vertCount++;
-		console.log('vc + 1')
-
-	}
-	else if(i > 0 && document.getElementById('row' + (i += 3) + 'col' + j).classList.contains(turnPlayer)){
-		vertCount++;
-		console.log('vc + 1')
-	}
-	else if(document.getElementById('row' + (i -= 1) + 'col' + j).classList.contains(turnPlayer)){
-		vertCount++;
-		console.log('vc + 1')
-	}
-	else{
-		false;
-	}
-
-
-
-
-
-
-
-	// var move = document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer);
-
-
-		
-
-
-
-
-
-		// if(i > 0 && move && document.getElementById('row' + k1 + 'col' + j).classList.contains(turnPlayer) && document.getElementById('row' + l2 + 'col' + j).classList.contains(turnPlayer)&& document.getElementById('row' + m3 + 'col' + j).classList.contains(turnPlayer)){
-		// 	console.log('4 in a row');
-		// }
-		// // else if(i > 0 && move && document.getElementById('row' + k1 + 'col' + j).classList.contains(turnPlayer) && document.getElementById('row' + l2 + 'col' + j).classList.contains(turnPlayer)){
-		// // 	console.log('3 in a row');
-		// // }
-		// // else if (i > 0 && move && document.getElementById('row' + k1 + 'col' + j).classList.contains(turnPlayer)){
-		// // 	console.log('2 in a row');
-		// // }
-		// else{
-		// 	false;
-		// 	console.log('not 4 in a row');
-		// }
-
-	// if(i > 0 && move && document.getElementById('row' + k1 + 'col' + j).classList.contains(turnPlayer)){
-	// 	console.log('2 in a row');
-	// } 
-	// else if(i > 0 && move && document.getElementById('row' + k1 + 'col' + j).classList.contains(turnPlayer) && document.getElementById('row' + l2 + 'col' + j).classList.contains(turnPlayer)){
-	// 		console.log('3 in a row');
-	// } 
-	// else if(i > 0 && move && document.getElementById('row' + k1 + 'col' + j).classList.contains(turnPlayer)&& document.getElementById('row' + l2 + 'col' + j).classList.contains(turnPlayer)&& document.getElementById('row' + m3 + 'col' + j).classList.contains(turnPlayer)){
-	// 		console.log('4 in a row');
-	// }
-	// else{
-	// 		console.log('nothing in a row');
-	// 		false;
-	// }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-// var checkVertWinner = function (rowNum, colNum, turnPlayer){
-// 	var vertCount = 0;
-// 	var i = rowNum; 
-// 	var j = colNum;
-// 	while (i < 6 && j < 7 && vertCount < 4){
-// 		console.log('vertcheck (+)loop rowNumi, colNumj ==', i, j);
-// 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
-// 			vertCount++;
-// 			i++;
-
-
-// 		}
-// 		else{
-// 			break;
-// 		}
-// 	}
-
-// 	i = rowNum - 1;
-// 	j = colNum - 1;
-
-// 	while(i >= 0 && j >= 0 && vertCount < 4){
-// 		console.log('vertcheck (+)loop rowNumi, colNumj ==', i, j);
-// 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
-// 			vertCount++;
-// 			i++;
-// 		}
-// 		else{
-// 			break;
-// 		}
-// 	}
-// 	console.log('vertCount was', vertCount);
-// 	if(vertCount >= 4){
-// 		return true;
-// 	}
-// 	else {
-// 		return false;
-// 	}
-// }
-
-var checkDiagWinner = function(rowNum, colNum, turnPlayer){
-	var count = 0;
-	var i = rowNum; 
-	var j = colNum; 
-// diagonal check is down to the right
-	while (i < 6 && j < 7 && count < 4){
-		console.log('diagcheck (+)loop rowNumi, colNumj ==', i, j);
+	while (i < 4 && vertCount < 4){
 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
-			count++;
 			i++;
-			j++;
+			vertCount ++;
 		}
-		else {
+		else{
 			break;
 		}
 	}
-// reset row and column position
-
-	i = rowNum - 1;
-	j = colNum - 1;
-
-// diagonal check up to the left
-	while (i >= 0 && j >= 0 && count < 4){
-		console.log('diagcheck (-)loop rowNumi, colNumj ==', i, j);
-		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
-			count++;
-			i--;
-			j--;
-		}
-		else {
-			break;
-		}
-	}
-	console.log('count was', count);
-	if(count >= 4){
+	console.log('vertCount was', vertCount);
+	if(vertCount >= 4){
 		return true;
 	}
 	else {
 		return false;
 	}
 }
+	
+
+
+
+
+// var checkDiagWinner = function(rowNum, colNum, turnPlayer){
+// 	var count = 0;
+// 	var i = rowNum; 
+// 	var j = colNum; 
+// // diagonal check is down to the right
+// 	while (i < 6 && j < 7 && count < 4){
+// 		console.log('diagcheck (+)loop rowNumi, colNumj ==', i, j);
+// 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
+// 			count++;
+// 			i++;
+// 			j++;
+// 		}
+// 		else {
+// 			break;
+// 		}
+// 	}
+// // reset row and column position
+
+// 	i = rowNum - 1;
+// 	j = colNum - 1;
+
+// // diagonal check up to the left
+// 	while (i >= 0 && j >= 0 && count < 4){
+// 		console.log('diagcheck (-)loop rowNumi, colNumj ==', i, j);
+// 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
+// 			count++;
+// 			i--;
+// 			j--;
+// 		}
+// 		else {
+// 			break;
+// 		}
+// 	}
+// 	console.log('count was', count);
+// 	if(count >= 4){
+// 		return true;
+// 	}
+// 	else {
+// 		return false;
+// 	}
+// }
 // var checkDiagWinner2 = function(rowNum, colNum, turnPlayer){
 // 	var count = 0;
 // 	var i = rowNum; 
