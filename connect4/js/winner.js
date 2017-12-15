@@ -1,15 +1,6 @@
 // winning functions of 'Connect 4!'
 
 
-var countCheck = function(){
-	if(count >= 4){
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-
 // checks North and South win conditions
 
 var checkVertWinner = function(rowNum, colNum, turnPlayer){
@@ -35,20 +26,19 @@ var checkVertWinner = function(rowNum, colNum, turnPlayer){
 		if(document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer)){
 			count++;
 			i--;
-			countCheck();
 			
 		}
 		else{
 			break;
 		}
 	}
+
 	if(count >= 4){
 		return true;
 	}
 	else {
 		return false;
 	}
-
 }
 
 // checks East/West wins
