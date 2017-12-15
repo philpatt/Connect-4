@@ -2,39 +2,36 @@ body{
 	text-align: center;
 	font-family: 'Bungee', cursive;
 	/*display: inline-block;*/
+	background-color: rgba(255,255,0,0.1);
 }
+#draw,
 #winner{
 	display: none;
 	width: 200px;
 	position: fixed;
-	text-align: center;
 	font-size: 200px;
-	left: 80px;
+	left: 250px;
 	opacity: 0.5;
 }
 .board{
-	/*height: 150px*/
+	height: 575px;
 	margin-top: : 100px;
-	width: 450px ;
-	/*padding:;*/
+	width: 600px ;
 	background-color: yellow;
 	display: inline-block;
-	border: 5px solid white;
+	border: 5px solid rgba(0,0,128, 0.2);
 }
 header{
-	width: 450px;
-	/*height: 20px;*/
+	width: 600px;
 	display: inline-block;
-	/*margin: 100px;*/
-	font-size: 36px;
-	/*margin-bottom: 75px;*/
+	font-size: 48px;
 	background-color: white;
 	border: 1px solid black;
 	color: teal;
 }
 .col{
-	height: 50px;
-	width: 50px;
+	height: 70px;
+	width: 70px;
 	display: inline-block;
 	background-color: white;
 	border-radius: 70%;
@@ -43,24 +40,3 @@ header{
 .col:hover {
 	background-color: rgba(255, 255, 255, 0.8);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*js 
-	var move = document.getElementById('row' + i + 'col' + j).classList.contains(turnPlayer);
-	var moveMinus1 = rowNum -= 1; 
-	var moveAdd1= rowNum += 1;
-	var moveMinus2= rowNum -= 2;
-	var moveAdd2= 
-
-
-	*/

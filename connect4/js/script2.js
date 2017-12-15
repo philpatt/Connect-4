@@ -4,7 +4,6 @@ var colClicked = function(){
 	if(turn%2 === 0){
 		this.style.backgroundColor = "black";
 		this.classList.add("blackClicked");
-		// this.removeEventListener('click', colClicked);
 		console.log('black clicked');
 		if(checkDiagWinner(coords[0], coords[1], 'blackClicked')){
 			winner.style.display = 'inline-block';
@@ -29,8 +28,6 @@ var colClicked = function(){
 	} else{
 		this.style.backgroundColor = "red";
 		this.classList.add("redClicked");
-		this.removeEventListener('click', colClicked);
-		console.log('red clicked');
 		if (checkDiagWinner(coords[0], coords[1], 'redClicked')){
 			winner.style.display = 'inline-block';
 			winner.style.color = 'red'; 
