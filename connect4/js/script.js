@@ -3,34 +3,40 @@ document.addEventListener("DOMContentLoaded", function(){
 	var winner = document.getElementById('winner');
 	var draw = document.getElementById('draw');
 	var col = document.getElementsByClassName('col');
-
+	// var rules = document.getElementById('rules');
+	addStartEventListener();
 	// reset game
+	draw.addEventListener('click', function(){
+	$('.col').css('backgroundColor', 'white');
+	$('.col').removeClass('redClicked');
+	$('.col').removeClass('blackClicked');
+	$('.col').removeClass('animated tada');
+	addStartEventListener(colClicked);
+	turn=0;
+	count=0;
+	})
 	winner.addEventListener('click', function(){
-
-		$('#winner').addClass('animated bounceOutDown');
 		$('.col').css('backgroundColor', 'white');
 		$('.col').removeClass('redClicked');
 		$('.col').removeClass('blackClicked');
-		addStartEventListener();
-
+		$('.col').removeClass('animated tada');
+		addStartEventListener(colClicked);
 		turn=0;
 		count=0;
 	})
-	addStartEventListener();
 })
-
 var col = document.getElementsByClassName('col');
 turn = 0;
 var count;
-
 // add click ability 
 var addStartEventListener = function(){
-	$('.container').addClass('animated jello');
-	$('.header').addClass('animated rubberBand');
+	$('.container').addClass('animated rubberBand');
+	$('.header').addClass('animated rubberBand')
+	$('#draw').css("display", "none");
+	$('#winner').css("display", "none");
 	console.log('game start');
 	for(var i = 0; i < col.length; i++){
 		col[i].addEventListener('click', (colClicked));
-		// col.style.backgroundColor = "white";
 	}
 }
 var colClicked = function(){
@@ -50,24 +56,28 @@ var colClicked = function(){
 			winner.style.display = 'inline-block';
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener(coords[0], coords[1]);
+			$('.container').removeClass('animated rubberBand');
 			console.log('Black WINS DIAG');
 		}
 		else if(checkDiagWinner2(coords[0], coords[1], 'blackClicked')){
 			winner.style.display = 'inline-block';
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener(coords[0], coords[1]);
+			$('.container').removeClass('animated rubberBand');
 			console.log('Black WINS DIAG2');
 		}
 		else if(checkHorzWinner(coords[0], coords[1], 'blackClicked')){
 			winner.style.display = 'inline-block';
 			$('#winner').addClass("animated bounceInDown");
-			removeColEventListener(coords[0], coords[1]);
+			removeColEventListener();
+			$('.container').removeClass('animated rubberBand');
 			console.log('Black WINS HORZ');
 		}
 		else if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
 			winner.style.display = 'inline-block';
 			$('#winner').addClass("animated bounceInDown");
-			removeColEventListener(coords[0], coords[1]);
+			removeColEventListener();
+			$('.container').removeClass('animated rubberBand');
 			console.log('Black WINS VERT');
 		}
 	} 
@@ -81,6 +91,7 @@ var colClicked = function(){
 			winner.style.color = 'red'; 
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
+			$('.container').removeClass('animated rubberBand');
 			console.log('RED WINS DIAG');
 		}
 		else if (checkDiagWinner2(coords[0], coords[1], 'redClicked')){
@@ -88,6 +99,7 @@ var colClicked = function(){
 			winner.style.color = 'red';
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
+			$('.container').removeClass('animated rubberBand');
 			console.log('RED WINS DIAG2');
 		}
 		else if (checkHorzWinner(coords[0], coords[1], 'redClicked')){
@@ -95,6 +107,7 @@ var colClicked = function(){
 			winner.style.color = 'red';
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
+			$('.container').removeClass('animated rubberBand');
 			console.log('red wins HORZ');
 		}
 		else if (checkVertWinner(coords[0], coords[1], 'redClicked')){
@@ -102,11 +115,9 @@ var colClicked = function(){
 			winner.style.color = 'red';
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
+			$('.container').removeClass('animated rubberBand');
 			console.log('red wins VERT')
 		}
-	}
-	if (turn === 42){
-		draw.style.display = 'inline-block';
 	}
 }
 var fallDown = function(rowNum, colNum){
