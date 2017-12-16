@@ -19,13 +19,18 @@ jquery - animations
 google fonts
 
 # Approach Taken
-begin making a connect 4 game board
-
+began making a connect 4 game board with basic styling
+create player turns
+determine win/draw detection
+create 'falldown' effect similar to actual gameplay
+add more styling/animation
+deploy to github
 
 # Issues
-Learning jquery
+Learning jquery (should have implemented jquery earlier in development)
 win detection took almost 3 days
 create "falldown" effect similar to actual gameplay (start at bottom row)
+creating falldown effect prior to win conditions would have made the process easier
 
 # Fun Stuff
 Styling
@@ -38,5 +43,4 @@ Check for comleted castles is buggy, large castles seem to believe they are comp
 # Next Steps
 add minimax AI
 keep track of how many wins players have
-choose your own game pieces
-themed boards
+choose your own game pieces/theme
