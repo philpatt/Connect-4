@@ -2,16 +2,30 @@
 Connect 4 !
 
 # Technical Requirements
-
+Game is playable    
+Game is 2-player (or AI)    
+Game is winnable    
+Winner is displayed 
+Has directions - how to play    
+Appropriate Use of GitHub   
+Deployed on Github Pages    
+Long files appropriately split up   
+Appropriate use of functions    
+DRY Code    
+Draw detected (if applicable)   
 
 # Technologies Used
+jquery - animations
+google fonts
 
 # Approach Taken
+begin making a connect 4 game board
 
 
 # Issues
 Learning jquery
-
+win detection took almost 3 days
+create "falldown" effect similar to actual gameplay (start at bottom row)
 
 # Fun Stuff
 Styling
