@@ -57,6 +57,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener(coords[0], coords[1]);
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('Black WINS DIAG');
 		}
 		else if(checkDiagWinner2(coords[0], coords[1], 'blackClicked')){
@@ -64,6 +65,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener(coords[0], coords[1]);
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('Black WINS DIAG2');
 		}
 		else if(checkHorzWinner(coords[0], coords[1], 'blackClicked')){
@@ -71,6 +73,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('Black WINS HORZ');
 		}
 		else if(checkVertWinner(coords[0], coords[1], 'blackClicked')){
@@ -78,6 +81,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('Black WINS VERT');
 		}
 	} 
@@ -92,6 +96,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('RED WINS DIAG');
 		}
 		else if (checkDiagWinner2(coords[0], coords[1], 'redClicked')){
@@ -100,6 +105,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('RED WINS DIAG2');
 		}
 		else if (checkHorzWinner(coords[0], coords[1], 'redClicked')){
@@ -108,6 +114,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('red wins HORZ');
 		}
 		else if (checkVertWinner(coords[0], coords[1], 'redClicked')){
@@ -116,6 +123,7 @@ var colClicked = function(){
 			$('#winner').addClass("animated bounceInDown");
 			removeColEventListener();
 			$('.container').removeClass('animated rubberBand');
+			$('.header').removeClass('animated rubberBand');
 			console.log('red wins VERT')
 		}
 	}
