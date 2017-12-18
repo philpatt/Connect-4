@@ -2,8 +2,6 @@
 
 
 // checks North and South win conditions
-
-
 var checkVertWinner = function(rowNum, colNum, turnPlayer){
 	var count = 0;
 	var i = rowNum;
@@ -43,7 +41,6 @@ var checkVertWinner = function(rowNum, colNum, turnPlayer){
 	}
 }
 
-// checks East/West wins
 var checkHorzWinner = function(rowNum, colNum, turnPlayer){
 	var count = 0;
 	var i = rowNum; 
