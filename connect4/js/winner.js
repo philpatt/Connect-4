@@ -3,16 +3,13 @@
 
 // checks North and South win conditions
 
+var checkDraw =
+
 var checkVertWinner = function(rowNum, colNum, turnPlayer){
 	var count = 0;
 	var i = rowNum;
 	var j = colNum;
-	if (turn > 13 && count < 4){
-	draw.style.display = 'inline-block';
-	$('#draw').addClass("animated bounceInDown");
-	$('.container').removeClass('animated rubberBand');
-	console.log('DRAW and count is ', count);
-}
+
 
 // Checks North to South
 	while (i < 6 && count < 4){
