@@ -1,4 +1,5 @@
 // CONNECT 4 !
+
 document.addEventListener("DOMContentLoaded", function(){
 	var winner = document.getElementById('winner');
 	var draw = document.getElementById('draw');
@@ -149,7 +150,6 @@ var fallDown = function(rowNum, colNum){
 	console.log('i - 1', i - 1);
 	return i <= 0 ? 0 : i - 1;
 }
-
 // removes the event listener from the selected move, so the move cannot be changed. 
 var removeSingleEventListener = function(rowNum, colNum){
 	console.log('removing row' + rowNum + "col" + colNum + "'s event listener");

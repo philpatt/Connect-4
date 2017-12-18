@@ -3,7 +3,6 @@
 
 // checks North and South win conditions
 
-var checkDraw =
 
 var checkVertWinner = function(rowNum, colNum, turnPlayer){
 	var count = 0;

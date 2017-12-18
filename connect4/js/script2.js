@@ -1,3 +1,9 @@
+
+
+
+// disregard this js file
+
+
 var colClicked = function(){
 	turn++;
 	var coords = this.id.replace('row', '').replace('col', '');

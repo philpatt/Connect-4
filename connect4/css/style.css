@@ -11,12 +11,8 @@ body{
     grid-template-rows: 50px 50px;
     margin-top: 50px;
 }
-.header	{
-
-}
 .container2{
 	display: inline-block;
-
 }
 #rules{
 	display: inline-block;
@@ -33,7 +29,6 @@ body{
 	z-index: 99;
 	color: blue;
 }
-
 .board{
 	height: 520px;
 	margin-top: : 100px;
